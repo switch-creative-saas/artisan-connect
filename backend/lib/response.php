@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/init.php';
 /**
  * Small JSON response helpers for beginner-friendly APIs.
  */

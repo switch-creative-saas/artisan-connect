@@ -1,12 +1,11 @@
 <?php
-require_once __DIR__ . '/../../lib/cors.php';
+require_once __DIR__ . '/../../lib/init.php';
 require_once __DIR__ . '/../../lib/session.php';
 require_once __DIR__ . '/../../lib/auth.php';
 require_once __DIR__ . '/../../lib/response.php';
 require_once __DIR__ . '/../../db.php';
 require_once __DIR__ . '/../../lib/simulation.php';
 
-apply_cors_headers();
 start_secure_session();
 
 // GET /backend/api/orders/index.php?status=completed

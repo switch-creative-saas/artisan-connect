@@ -1,10 +1,9 @@
 <?php
-require_once __DIR__ . '/../../lib/cors.php';
+require_once __DIR__ . '/../../lib/init.php';
 require_once __DIR__ . '/../../lib/session.php';
 require_once __DIR__ . '/../../lib/auth.php';
 require_once __DIR__ . '/../../lib/input.php';
 
-apply_cors_headers();
 start_secure_session();
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {

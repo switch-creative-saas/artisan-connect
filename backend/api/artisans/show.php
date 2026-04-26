@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../../lib/init.php';
 require_once __DIR__ . '/../../lib/response.php';
 require_once __DIR__ . '/../../lib/input.php';
 require_once __DIR__ . '/../../db.php';

@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# Serve frontend
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^$ /public/index.html [L]
+
+# Allow direct access to backend API
+RewriteCond %{REQUEST_URI} ^/backend/api/
+RewriteRule ^ - [L]
+
+# Redirect everything else to public
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ /public/$1 [L]

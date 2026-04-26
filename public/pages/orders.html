@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders - ArtisanConnect</title>
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/styles.css">
+  <link rel="stylesheet" href="/public/css/dashboard.css">
+  <link rel="stylesheet" href="/public/css/orders.css">
+</head>
+<body>
+  <div class="toast-container" id="toastContainer"></div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+  <div class="dashboard-topbar">
+    <div class="dashboard-topbar-left">
+      <a href="dashboard.html" class="logo" style="gap:10px; text-decoration:none;">
+        <div class="logo-icon"><img src="../assets/app-logo.png" alt="ArtisanConnect"></div>
+        <span class="topbar-title">ArtisanConnect</span>
+      </a>
+    </div>
+    <div class="dashboard-topbar-right"></div>
+  </div>
+
+  <div class="dashboard">
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <div class="sidebar-profile">
+        <div class="sidebar-user">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="User" class="sidebar-user-avatar">
+          <div class="sidebar-user-info">
+            <h4 id="sidebarUserName">John Doe</h4>
+            <p>Client</p>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="sidebar-nav-section">
+          <p class="sidebar-nav-title">Main</p>
+          <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item"><a href="../index.html" class="sidebar-nav-link">Landing Page</a></li>
+            <li class="sidebar-nav-item"><a href="dashboard.html" class="sidebar-nav-link">Dashboard</a></li>
+            <li class="sidebar-nav-item"><a href="search.html" class="sidebar-nav-link">Find Artisans</a></li>
+            <li class="sidebar-nav-item"><a href="messages.html" class="sidebar-nav-link">Messages</a></li>
+            <li class="sidebar-nav-item"><a href="favourites.html" class="sidebar-nav-link">Favourites</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-nav-section">
+          <p class="sidebar-nav-title">Orders</p>
+          <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item"><a href="orders.html" class="sidebar-nav-link active">My Orders</a></li>
+            <li class="sidebar-nav-item"><a href="track-order.html" class="sidebar-nav-link">Track Order</a></li>
+            <li class="sidebar-nav-item"><a href="order-history.html" class="sidebar-nav-link">Order History</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-nav-section">
+          <p class="sidebar-nav-title">Account</p>
+          <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item"><a href="profile.html" class="sidebar-nav-link">Profile</a></li>
+            <li class="sidebar-nav-item"><a href="settings.html" class="sidebar-nav-link">Settings</a></li>
+            <li class="sidebar-nav-item">
+              <a href="#" class="sidebar-nav-link" onclick="logout(); return false;">
+                Logout (to Landing)
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="dashboard-main">
+      <div class="dashboard-header">
+        <div class="dashboard-title">
+          <h1>My Orders</h1>
+          <p>All your active service requests in one place</p>
+        </div>
+        <div class="dashboard-actions">
+          <a href="search.html" class="btn btn-primary">Hire an artisan</a>
+
+        <div class="orders-container" id="ordersContainer">
+          <div class="loading-spinner" id="loadingSpinner">
+            <div class="spinner"></div>
+            <p>Loading your orders...</p>
+          </div>
+          
+          <div class="orders-grid" id="ordersGrid" style="display: none;">
+            <!-- Orders will be dynamically loaded here -->
+          </div>
+
+          <div class="empty-state" id="emptyState" style="display: none;">
+            <div class="empty-state-icon">📋</div>
+            <h3>No orders found</h3>
+            <p>You haven't placed any orders yet. Start by finding and hiring an artisan!</p>
+            <a href="search.html" class="btn btn-primary">Find Artisans</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/public/js/runtime-config.js"></script>
+  <script src="/public/js/main.js"></script>
+  <script src="/public/js/dashboard.js"></script>
+  <script src="/public/js/orders.js"></script>
+  </script>
+</body>
+</html>
